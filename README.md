@@ -1,9 +1,11 @@
 # SPFXShoppingList
 Implementation of Shopping List web part implemented client-side using the SharePoint Framework.
 
-## shopping-list
+## Introduction
 
-This is where you include your web part docs.
+The Shopping List web part will show the contents of a SharePoint list, named "Shopping List" by default. It is intended as a demonstration client-side web part using ReactJS, Office-UI-Fabric and the PnP-Core-JS library to show how a full-featured web part can be built with very few lines of code.
+
+ReactJS is used here as the view rendering framework, which is a good match as we don't require a more comprehensive SPA framework such as Angular. A number of React components are included in the Office-UI-Fabric which allows us to build UI elements that implement the modern SharePoint and Office look and feel simply by including those components in the TSX markup. Instead of building a model, we simply use the PnP-Core-JS library components which provide a sufficient encapsulation of the underlying SharePoint REST calls (this might not be the case for a more complex application). The PnP-Core-JS library has its own cacheing mechanism which ensures that we don't make unnecessary calls to SharePoint. The cache is configurable, but we are using the default settings.
 
 ### Building the code
 
