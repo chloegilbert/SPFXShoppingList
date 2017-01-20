@@ -7,12 +7,17 @@ This is where you include your web part docs.
 
 ### Building the code
 
+You will need Node and Git installed on your machine. To learn how to set up a development environment for the SharePoint Framework, go to dev.office.com/sharepoint and follow the Get Started link.
+
 ```bash
-git clone the repo
-npm i
-npm i -g gulp
-gulp
+git clone https://github.com/SPDoctor/SPFXShoppingList.git
+cd SPFXShoppingList
+npm install -g gulp
+npm install
+gulp serve
 ```
+
+The **npm install** command will download and install everything required, and may well take twenty minutes or so depending on your Internet connection, etc.
 
 This package produces the following:
 
