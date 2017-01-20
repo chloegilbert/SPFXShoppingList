@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "name": "shopping-list-client-side-solution",
+    "id": "e8ece8a8-d722-436f-85e0-12341a085b26",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/shopping-list.sppkg"
+  }
+}

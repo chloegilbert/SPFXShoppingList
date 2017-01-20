@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/shoppingList/ShoppingListWebPart.js",
+      "manifest": "./src/webparts/shoppingList/ShoppingListWebPart.manifest.json",
+      "outputPath": "./dist/shopping-list.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "shoppingListStrings": "webparts/shoppingList/loc/{locale}.js"
+  }
+}
