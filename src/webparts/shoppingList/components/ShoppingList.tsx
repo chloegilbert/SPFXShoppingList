@@ -52,6 +52,13 @@ export default class ShoppingList extends React.Component<IShoppingListProps, {}
   }
 
   public render(): JSX.Element {
+    const commandBarItems = [
+      { key: 'newItem', name: 'New', icon: 'Add', onClick: () => { return; } },
+      { key: 'upload', name: 'Upload', icon: 'Upload', onClick: () => { return; }  },
+      { key: 'share', name: 'Share', icon: 'Share', onClick: () => { return; } },
+      { key: 'refresh', name: 'Refresh', icon: 'Sync', onClick: () => this.getData() }
+    ];
+
     return (
       <div>
       <h1 className="ms-bgColor-themeLighter">{this.props.title?this.props.title:"Shopping List"}</h1>
@@ -68,6 +75,7 @@ export default class ShoppingList extends React.Component<IShoppingListProps, {}
           </div>
         </div>
         {Environment.type === EnvironmentType.Local ? <h3 className="ms-bgColor-error">Running locally with mock data</h3> : <span/> }
+        <fabric.CommandBar isSearchBoxVisible={true} searchPlaceholderText='Search...' items={[]} farItems={commandBarItems} />
       </div>
     );
   }
