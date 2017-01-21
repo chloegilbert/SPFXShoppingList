@@ -3,8 +3,7 @@ import * as ReactDom from 'react-dom';
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
-  PropertyPaneTextField,
-  PropertyPaneCheckbox
+  PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
 import ShoppingList, { IShoppingListProps } from './components/ShoppingList';
 import { IShoppingListWebPartProps } from './IShoppingListWebPartProps';
@@ -13,12 +12,9 @@ export default class ShoppingListWebPart extends BaseClientSideWebPart<IShopping
 
   public render(): void {
     const element: React.ReactElement<IShoppingListProps> = React.createElement(ShoppingList, {
-      description: this.properties.description,
-      showLists: this.properties.showLists,
+      title: this.properties.title,
       listName: this.properties.listName,
-      showItems: this.properties.showItems,
-      showUser: this.properties.showUser,
-      self: this
+      context: this.context
     });
     ReactDom.render(element, this.domElement);
   }
@@ -34,25 +30,13 @@ export default class ShoppingListWebPart extends BaseClientSideWebPart<IShopping
             {
               groupName: "Properties",
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: "Description Field",
-                  placeholder: "enter a description"
-                }),
-                PropertyPaneCheckbox('showLists', {
-                  checked: false,
-                  text: "Show Lists"
+                PropertyPaneTextField('title', {
+                  label: "Title",
+                  placeholder: "enter list title"
                 }),
                 PropertyPaneTextField('listName', {
                   label: "List Name",
                   placeholder: "enter list name"
-                }),
-                PropertyPaneCheckbox('showItems', {
-                  checked: false,
-                  text: "Show Items"
-                }),
-                PropertyPaneCheckbox('showUser', {
-                  checked: false,
-                  text: "Show User"
                 })
               ]
             }

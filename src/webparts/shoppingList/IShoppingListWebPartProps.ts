@@ -1,8 +1,5 @@
 export interface IShoppingListWebPartProps {
-  description: string;
-  showLists: boolean;
+  title: string;
   listName: string;
-  showItems: boolean;
-  showUser: boolean;
-  self: any;
+  context: any;
 }
