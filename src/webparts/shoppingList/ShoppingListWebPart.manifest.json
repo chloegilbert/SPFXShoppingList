@@ -14,7 +14,8 @@
     "description": { "default": "Demo web part based on a SharePoint list" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "ShoppingList"
+      "title": "Shopping List",
+      "listName": "ShoppingList"
     }
   }]
 }

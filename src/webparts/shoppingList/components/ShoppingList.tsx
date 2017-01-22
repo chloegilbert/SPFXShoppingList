@@ -24,8 +24,7 @@ export default class ShoppingList extends React.Component<IShoppingListProps, {}
       that.setState({ SpinnerVisible: true });
       // make sure we are on the correct web...
       var web = new pnp.Web(this.props.context.pageContext.web.absoluteUrl);
-      var listName = this.props.listName || "ShoppingList";
-      web.lists.getByTitle(listName).items.usingCaching().get().then(result => {
+      web.lists.getByTitle(this.props.listName).items.usingCaching().get().then(result => {
         var items: any = result.map(r => r.Title);
         that.setState({ Items: items });
         that.setState({ SpinnerVisible: false });
@@ -36,8 +35,7 @@ export default class ShoppingList extends React.Component<IShoppingListProps, {}
       setTimeout(() => { // simulated fetch
         var items = that.state["Items"];
         if(items.length === 0) items = ["Item 1", "Item 2", "Item 3"];
-        that.setState({ Items: items });
-        that.setState({ SpinnerVisible: false });
+        that.setState({ Items: items, SpinnerVisible: false });
       },1000);
     }
   }
@@ -46,8 +44,7 @@ export default class ShoppingList extends React.Component<IShoppingListProps, {}
     var that: any = this; // save 'this' so it is available from within the closure
     if (!(Environment.type === EnvironmentType.Local)) {
       var web = new pnp.Web(this.props.context.pageContext.web.absoluteUrl);
-      var listName = this.props.listName || "ShoppingList";
-      web.lists.getByTitle(listName).items.add({Title: text}).then(() => {
+      web.lists.getByTitle(this.props.listName).items.add({Title: text}).then(() => {
         that.getData();
       });
     }
@@ -56,8 +53,7 @@ export default class ShoppingList extends React.Component<IShoppingListProps, {}
       setTimeout(() => { // simulated fetch
         var items = that.state["Items"];
         items.push(text);
-        that.setState({ Items: items });
-        that.setState({ SpinnerVisible: false });
+        that.setState({ Items: items, SpinnerVisible: false });
       },1000);
     }
   }
@@ -92,7 +88,7 @@ export default class ShoppingList extends React.Component<IShoppingListProps, {}
               <fabric.Button onClick={() => this.getData() } className="ms-Button--primary">Refresh List</fabric.Button>
             </div>
             <div className="ms-Grid-col">
-              {this.state["SpinnerVisible"] ? <fabric.Spinner type={fabric.SpinnerType.large} /> : <span/> }
+              {this.state["SpinnerVisible"] ? <fabric.Spinner type={fabric.SpinnerType.large} label="Loading..." /> : <span/> }
             </div>
           </div>
         </div>
