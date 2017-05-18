@@ -14,7 +14,6 @@ You will need Node and Git installed on your machine. To learn how to set up a d
 ```bash
 git clone https://github.com/SPDoctor/SPFXShoppingList.git
 cd SPFXShoppingList
-npm install -g gulp
 npm install
 gulp serve
 ```

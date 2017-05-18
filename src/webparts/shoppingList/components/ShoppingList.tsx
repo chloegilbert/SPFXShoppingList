@@ -1,7 +1,5 @@
 import * as React from 'react';
-import styles from './ShoppingList.module.scss';
 import { IShoppingListProps } from './IShoppingListProps';
-import { escape } from '@microsoft/sp-lodash-subset';
 import * as fabric from 'office-ui-fabric-react'; // should just import needed modules for production use
 import * as pnp from 'sp-pnp-js';
 import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
@@ -9,27 +7,6 @@ import { IShoppingListWebPartProps } from '../IShoppingListWebPartProps';
 
 export interface IShoppingListProps extends IShoppingListWebPartProps {
 }
-
-/*export default class ShoppingList extends React.Component<IShoppingListProps, void> {
-  public render(): React.ReactElement<IShoppingListProps> {
-    return (
-      <div className={styles.helloWorld}>
-        <div className={styles.container}>
-          <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
-            <div className="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
-              <span className="ms-font-xl ms-fontColor-white">Welcome to SharePoint!</span>
-              <p className="ms-font-l ms-fontColor-white">Customize SharePoint experiences using Web Parts.</p>
-              <p className="ms-font-l ms-fontColor-white">{escape(this.props.description)}</p>
-              <a href="https://aka.ms/spfx" className={styles.button}>
-                <span className={styles.label}>Learn more</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-}*/
 
 export default class ShoppingList extends React.Component<IShoppingListProps, {}> {
   constructor(props: IShoppingListProps) {
