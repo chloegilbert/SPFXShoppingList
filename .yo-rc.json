@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "libraryName": "shopping-list",
+    "framework": "react",
+    "version": "1.0.2",
+    "libraryId": "80d8b21c-023a-4d3c-a11a-0016b72dda1f"
+  }
+}

@@ -1,19 +1,20 @@
 {
   "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
 
-  "id": "4d64aab1-f976-4138-8f30-49d9dc23584d",
+  "id": "3cd762ba-b164-4f34-a085-e6e44b25b16e",
   "alias": "ShoppingListWebPart",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,
 
   "preconfiguredEntries": [{
-    "groupId": "4d64aab1-f976-4138-8f30-49d9dc23584d",
+    "groupId": "3cd762ba-b164-4f34-a085-e6e44b25b16e",
     "group": { "default": "Under Development" },
     "title": { "default": "ShoppingList" },
     "description": { "default": "Demo web part based on a SharePoint list" },
     "officeFabricIconFontName": "Page",
     "properties": {
+      "description": "ShoppingList",
       "title": "Shopping List",
       "listName": "ShoppingList"
     }
